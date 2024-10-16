@@ -1,8 +1,7 @@
 import React from "react";
 import { haircuts } from "../constants/Haircuts";
 import Link from "next/link";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { InfoCutTime } from "./InfoCutTIme";
+import { buttonVariants } from "@/components/ui/button";
 
 const formatPriceArs = new Intl.NumberFormat("es-AR", {
   style: "currency",
@@ -14,9 +13,9 @@ function HaircutCard() {
   return (
     <div className="flex flex-col p-2 gap-5">
       {haircuts.map((haircut) => (
-        <div>
+        <div key={haircut.name}>
           <Link
-            key={haircut.name}
+            
             href={`/haircuts/${haircut.name.toLowerCase()}`}
             className={buttonVariants({
               variant: "outline",
