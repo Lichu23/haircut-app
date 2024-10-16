@@ -9,7 +9,7 @@ import Link from "next/link";
 
 async function Header() {
   return (
-    <div className="bg-slate-600 p-4 size-full">
+    <div className="bg-black relative top-0  right-0 left-0 p-4">
       <div className="flex justify-between px-4 text-white">
         <SignedOut>
           <Link href="/">Logo</Link>
