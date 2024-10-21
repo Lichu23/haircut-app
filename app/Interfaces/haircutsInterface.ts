@@ -1,5 +1,6 @@
 export interface HaircutsInterface {
     name:string,
     price:number,
-    time:number
+    time:number,
+    description:string
 }

@@ -5,28 +5,43 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
+import Image from "next/image";
 import Link from "next/link";
 
 async function Header() {
   return (
-    <div className="bg-black relative top-0  right-0 left-0 p-4">
-      <div className="flex justify-between px-4 text-white">
+    <div className="bg-black relative top-0  right-0 left-0 p-3">
+      <div className="flex justify-between lg:px-10 sm:px-0 items-center text-white">
         <SignedOut>
-          <Link href="/">Logo</Link>
+          <Link href="/">
+            <Image
+              width={200}
+              height={200}
+              src="/images/logo.png"
+              alt="logo image"
+            />
+          </Link>
         </SignedOut>
 
         <SignedIn>
-          <Link href="/haircuts">Logo</Link>
+          <Link href="/haircuts">
+            <Image
+              width={200}
+              height={200}
+              src="/images/logo.png"
+              alt="logo image"
+            />
+          </Link>
         </SignedIn>
 
-        <div className="flex gap-4">
+        <div className="flex lg:gap-10 gap-4 text-lg font-semibold md:text-2xl">
           <SignedIn>
-              <UserButton />
+            <UserButton />
           </SignedIn>
 
           <SignedOut>
-            <SignInButton />
-            <SignUpButton />
+              <SignInButton />
+              <SignUpButton />
           </SignedOut>
         </div>
       </div>
