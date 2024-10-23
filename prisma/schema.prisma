@@ -7,5 +7,16 @@ generator client {
 
 datasource db {
   provider = "cockroachdb"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
+}
+
+
+model Haircuts {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  price       Float
+  description String
+  active      Boolean  @default(true)
 }
