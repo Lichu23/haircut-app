@@ -64,10 +64,10 @@ export async function POST(req: Request) {
     const user = {
       clerkId: id,
       email: email_addresses[0].email_address,
-      username: username!,
-      photo: image_url!,
+      username: username,
       firstName: first_name,
       lastName: last_name,
+      photo: image_url,
     };
     console.log(user);
     //una vez q se crea el user en clerk se debe crear una entrada en la base de datos de mongodb
