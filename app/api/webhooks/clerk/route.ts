@@ -1,11 +1,9 @@
-import { clerkClient } from "@clerk/nextjs/server";
-import { WebhookEvent } from "@clerk/nextjs/server";
+import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
 
 import { createUser } from "@/lib/actions/user.action";
-import { Z_DATA_ERROR } from "zlib";
 
 export async function POST(req: Request) {
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
