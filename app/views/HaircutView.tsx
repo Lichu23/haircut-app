@@ -6,7 +6,7 @@ async function HaircutView() {
   const { userId } = auth();
   const user = await currentUser();
 
-  if (!userId || !user) return <>{/* <Error /> */}</>;
+  if (!userId || !user) return <><p>Error</p></>;
 
   return (
     <div className="flex flex-col gap-3 justify-center items-center">
