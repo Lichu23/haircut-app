@@ -8,7 +8,8 @@ interface MongooseConn {
 }
 //Creamos el cache para cuando conectemos a la base de datos utilizar los datos cacheados
 // asi no se vuelve a regenerar la conexion con la bd que eso realentizaaria la app
-
+//Dale forros
+const caca = 1
 let cached: MongooseConn = (global as any).mongoose;
 
 if (!cached) {
