@@ -21,16 +21,17 @@ if (!cached) {
 
 //function to connect another files with this database
 export const connect = async () => {
-  //If cached, returns the cached data.
   if (cached.conn) return cached.conn;
 
   cached.promise =
     cached.promise ||
-    mongoose.connect(MONGODB_URL, {
-      dbName: "hairsalon-next-db",
+    mongoose.connect(MONGODB_URL!, {
+      dbName: "clerk-next14-db",
       bufferCommands: false,
-      connectTimeoutMS: 3000,
+      connectTimeoutMS: 30000,
     });
 
   cached.conn = await cached.promise;
+
+  return cached.conn;
 };
